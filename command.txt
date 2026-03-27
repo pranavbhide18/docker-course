@@ -1,0 +1,18 @@
+1. build docker image: 
+docker build .
+
+2. Run docker container from an image 
+docker run -p 3000:3000 <image-id> // run image on port 3000  <localPort>:<dockerPort>; default attached mode
+docker run -it node // run node with interactive session in terminal
+
+3. List docker containers
+docker ps
+
+4. Stop docker container
+docker stop <container-name> / <container-id>
+
+5. Run existing docker container without blocking container
+docker start <container-name>  // default detached mode
+
+6. 
+
