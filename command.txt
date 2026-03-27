@@ -1,5 +1,6 @@
 1. build docker image: 
 docker build .
+docker build -t goals:latest . // sets name:tag to your container
 
 2. Run docker container from an image 
 docker run -p 3000:3000 <image-id> // run image on port 3000  <localPort>:<dockerPort>; default attached mode
