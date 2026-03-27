@@ -1,0 +1,40 @@
+# Byte-compiled / optimal files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+
+# IDE and editor files
+.idea/  # JetBrains IDEs (PyCharm, etc.)
+.vscode/ # VS Code
+*.swp    # Vim swap files
+
+# Build artifacts
+build/
+dist/
+wheels/
+share/man/
+lib/
+include/
+bin/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-line.txt
+
+# OS-specific files
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Sensitive information/credentials (highly recommended)
+*.env
+.flaskenv
+secrets.toml
