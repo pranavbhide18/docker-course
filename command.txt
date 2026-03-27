@@ -28,5 +28,19 @@ docker image prune // remove all unused images
 8. Image details
 docker image inspect <image-id>
 
+9. Rename Image
+docker tag <old-name>:<old-tag> <new-name>:<new-tag>
+
+9. Pushing images to DockerHub
+docker push <image-name>:<?image-tag>
+
+10. Download/Pull image from DockerHub
+docker pull <image-name>:<tag>
+
+11. Login to docker using cli
+docker Login
+
+
+
 
 
