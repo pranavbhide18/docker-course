@@ -4,9 +4,12 @@ docker build .
 2. Run docker container from an image 
 docker run -p 3000:3000 <image-id> // run image on port 3000  <localPort>:<dockerPort>; default attached mode
 docker run -it node // run node with interactive session in terminal
+docer run -p 3000:80 -d --rm <image-id> // remove container after container is stopped
+docker run -p 3000:80 -d --rm --name <some-name> <image-id> // run a container with your own name
 
 3. List docker containers
-docker ps
+docker ps // list containers
+docker images // list images
 
 4. Stop docker container
 docker stop <container-name> / <container-id>
@@ -14,5 +17,15 @@ docker stop <container-name> / <container-id>
 5. Run existing docker container without blocking container
 docker start <container-name>  // default detached mode
 
-6. 
+6. Delete container
+docker rm <container-name>
+
+7. Remove images
+docker rmi <image-id> // you cannot remove an image being used by a container whether it is running or stopped
+docker image prune // remove all unused images
+
+8. Image details
+docker image inspect <image-id>
+
+
 
