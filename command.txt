@@ -7,6 +7,7 @@ docker run -p 3000:3000 <image-id> // run image on port 3000  <localPort>:<docke
 docker run -it node // run node with interactive session in terminal
 docer run -p 3000:80 -d --rm <image-id> // remove container after container is stopped
 docker run -p 3000:80 -d --rm --name <some-name> <image-id> // run a container with your own name
+docker run -p 3000:80 -d --rm --name <some-name> -v feedback:/app/feedback <image-id> // start container with name volumes
 
 3. List docker containers
 docker ps // list containers
@@ -38,7 +39,15 @@ docker push <image-name>:<?image-tag>
 docker pull <image-name>:<tag>
 
 11. Login to docker using cli
-docker Login
+docker Login docker logout
+
+12. List all volumes
+docker volume ls
+
+13. Bind Mounts
+export MSYS_NO_PATHCONV=1
+
+docker run -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v "/c/Users/prana/OneDrive/Desktop/Courses/Docker/Section3/App1:/app" -v /app/node_nodules feedback-node:volumes
 
 
 
