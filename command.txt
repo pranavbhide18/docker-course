@@ -49,7 +49,8 @@ export MSYS_NO_PATHCONV=1
 
 docker run -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v "/c/Users/prana/OneDrive/Desktop/Courses/Docker/Section3/App1:/app" -v /app/node_nodules feedback-node:volumes
 
-
+14. Create volume
+docker volume create <volume-name>
 
 
 
