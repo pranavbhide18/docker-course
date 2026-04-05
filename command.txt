@@ -1,6 +1,7 @@
 1. build docker image: 
 docker build .
 docker build -t goals:latest . // sets name:tag to your container
+docke build -t feedback-node:dev --build-arg DEFAULT_PORT=8000 . // set default args for port
 
 2. Run docker container from an image 
 docker run -p 3000:3000 <image-id> // run image on port 3000  <localPort>:<dockerPort>; default attached mode
@@ -52,5 +53,17 @@ docker run -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v "/c/
 14. Create volume
 docker volume create <volume-name>
 
-soem chage
+15. Using .env
+docker run -p 3000:8000 --env PORT=8000 --rm --name feedback-app -v feedback:/app/feedback -v "/c/Users/prana/OneDrive/Desktop/Courses/Docker/Section3/App1:/app" -v /app/node_nodules feedback-node:env
+docker run -p 3000:8000 --env-file ./env --rm --name feedback-app -v feedback:/app/feedback -v "/c/Users/prana/OneDrive/Desktop/Courses/Docker/Section3/App1:/app" -v /app/node_nodules feedback-node:env
 
+16. Docker Network
+Create
+docker network create <name>
+
+17. Add network to multiple containers
+docker run -p 3000:3000 --network favourites-net  -d --rm --name favourite-app favourite-app:latest
+
+
+18. Creating a Mongodb container
+docker run -d --rm --name mongodb -v data:/data/db -e MONGO_INITDB_ROOT_USERNAME=pranavbhide -e MONGO_INITDB_ROOT_PASSWORD=secret --network goals-network mongo

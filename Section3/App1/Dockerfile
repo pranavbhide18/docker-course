@@ -8,7 +8,10 @@ RUN npm install
 
 COPY . /app
 
-EXPOSE 80
+ARG DEFAULT_PORT=80
+ENV PORT $DEFAULT_PORT
+
+EXPOSE $PORT
 
 # VOLUME ["/app/node_modules"] // add this volume to tell docker to not load node_modules from local bind mount
 
